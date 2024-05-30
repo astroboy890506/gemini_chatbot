@@ -1,6 +1,7 @@
 import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI
-import os
+import os  # Importing the os module here
+
 # Set up Google API key
 os.environ["GOOGLE_API_KEY"] = "AIzaSyANo6NLWBI6cfq5-GR1XQ9W2jZkHyUWnKU"
 
