@@ -1,9 +1,18 @@
 import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Ensure the API key is set in the environment before running the script
+api_key = os.getenv("GOOGLE_API_KEY")
+if not api_key:
+    st.error("Google API key not found in environment variables.")
+    st.stop()
 
 # Initialize Google AI model
-api_key = os.environ["AIzaSyANo6NLWBI6cfq5-GR1XQ9W2jZkHyUWnKU"]
 llm = ChatGoogleGenerativeAI(model="gemini-pro", max_output_tokens=1000, api_key=api_key)
 
 # Streamlit UI
