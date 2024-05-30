@@ -6,11 +6,6 @@ import os
 api_key = os.environ["AIzaSyANo6NLWBI6cfq5-GR1XQ9W2jZkHyUWnKU"]
 llm = ChatGoogleGenerativeAI(model="gemini-pro", max_output_tokens=1000, api_key=api_key)
 
-# Ensure the API key is set in the environment before running the script
-if "GOOGLE_API_KEY" not in os.environ:
-    st.error("Google API key not found in environment variables.")
-    st.stop()
-    
 # Streamlit UI
 st.title("Google Gemini Chatbot")
 
